@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Industries — Corporategate Limited</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+Mono:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+</head>
+<body data-page="industries">
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><i data-lucide="chevron-right"></i><span class="current">Industries</span>
+      </nav>
+      <span class="eyebrow">Who we serve</span>
+      <h1>Proven delivery across the sectors that depend on getting it right</h1>
+      <p>From government tenders to industrial supply, we tailor our divisions to the realities of each sector.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="cards" id="industryGrid"></div>
+    </div>
+  </section>
+
+  <section class="band white">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Tailored journeys</span>
+        <h2>How different buyers work with us</h2>
+        <p>Common paths through our services, mapped to who you are.</p>
+      </div>
+      <div class="cards" id="journeys"></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <h3>Don't see your sector?</h3>
+        <p>Our operating scope is deliberately broad. Tell us your requirement and we'll scope a solution.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-accent">Request a Quote <i data-lucide="chevron-right" style="width:20px;height:20px"></i></a>
+          <a href="services.html" class="btn btn-ghost">Browse services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/data.js"></script>
+  <script>
+    document.getElementById('industryGrid').innerHTML = CG.industries.map(function (i) {
+      return '<div class="card ind-card reveal"><i data-lucide="' + i.icon + '" class="head"></i>' +
+        '<h4>' + i.title + '</h4><p style="margin-bottom:16px">' + i.desc + '</p>' +
+        '<ul>' + i.items.map(function (it) { return '<li><i data-lucide="check-circle-2"></i><span>' + it + '</span></li>'; }).join('') + '</ul></div>';
+    }).join('');
+
+    var journeys = [
+      { icon: 'shopping-cart', who: 'Procurement officer', path: 'Services → General Contracting & Procurement → Request a Quote → Documented confirmation.' },
+      { icon: 'cpu', who: 'ICT / security client', path: 'Services → ICT or Security Systems → Capability checklist → Book a consultation.' },
+      { icon: 'landmark', who: 'Government stakeholder', path: 'About → Company Profile → Services → Request a Quote → Contact.' },
+      { icon: 'handshake', who: 'Potential vendor / partner', path: 'Partner Enquiry → Vendor capabilities form → Confirmation.' }
+    ];
+    document.getElementById('journeys').innerHTML = journeys.map(function (j) {
+      return '<div class="card reveal"><div class="icon-badge" style="background:var(--cg-deep-navy)"><i data-lucide="' + j.icon + '"></i></div>' +
+        '<h4>' + j.who + '</h4><p>' + j.path + '</p></div>';
+    }).join('');
+  </script>
+  <script src="assets/site.js"></script>
+</body></html>

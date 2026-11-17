@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insights — Corporategate Limited</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+Mono:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+</head>
+<body data-page="insights">
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><i data-lucide="chevron-right"></i><span class="current">Insights</span>
+      </nav>
+      <span class="eyebrow">Knowledge &amp; news</span>
+      <h1>Procurement, ICT, security and project delivery — explained</h1>
+      <p>Practical guides, delivery notes and company news to help buyers and partners get the most from working with us.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="filters" data-filter-group="" data-target="#insightGrid">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="Procurement">Procurement</button>
+        <button class="chip" data-filter="ICT &amp; Security">ICT &amp; Security</button>
+        <button class="chip" data-filter="Project Delivery">Project Delivery</button>
+        <button class="chip" data-filter="Vendor Readiness">Vendor Readiness</button>
+        <button class="chip" data-filter="Logistics">Logistics</button>
+        <button class="chip" data-filter="Company News">Company News</button>
+      </div>
+      <div class="cards" id="insightGrid"></div>
+    </div>
+  </section>
+
+  <section class="band white">
+    <div class="wrap" style="max-width:760px">
+      <div class="cta-band reveal">
+        <h3>Stay in the loop</h3>
+        <p>Get occasional procurement guides, vendor-readiness tips and company updates. No spam.</p>
+        <form data-cgform="" novalidate="" style="display:flex; gap:12px; max-width:480px; margin:0 auto; flex-wrap:wrap; justify-content:center">
+          <div class="form-body" style="display:flex; gap:12px; flex:1; min-width:260px">
+            <div class="field" data-field="" style="flex:1; margin:0">
+              <input type="email" placeholder="you@company.com" required="" aria-label="Email address">
+              <span class="err-msg">Enter a valid email.</span>
+            </div>
+            <button type="submit" class="btn btn-accent" style="white-space:nowrap">Subscribe</button>
+          </div>
+          <div class="form-success" style="padding:0; color:#fff">
+            <p style="color:#fff; font-weight:600"><i data-lucide="check-circle-2" style="display:inline-block; width:18px; height:18px; vertical-align:-3px; color:var(--cg-gate-cyan)"></i> Subscribed — thank you.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/data.js"></script>
+  <script>
+    document.getElementById('insightGrid').innerHTML = CG.insights.map(function (a) {
+      return '<a class="card insight-card link-card reveal" href="#" data-tags="' + a.cat + '" onclick="return false">' +
+        '<div class="thumb"><i data-lucide="' + a.icon + '"></i></div>' +
+        '<div class="body"><span class="cat">' + a.cat + '</span><span class="date">' + a.date + '</span>' +
+        '<h4>' + a.title + '</h4><p>' + a.excerpt + '</p>' +
+        '<span class="learn" style="color:var(--cg-gate-blue)">Read more <i data-lucide="chevron-right"></i></span></div></a>';
+    }).join('');
+  </script>
+  <script src="assets/site.js"></script>
+</body></html>

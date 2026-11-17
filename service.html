@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service — Corporategate Limited</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+Mono:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+</head>
+<body data-page="services">
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><i data-lucide="chevron-right"></i>
+        <a href="services.html">Services</a><i data-lucide="chevron-right"></i>
+        <span class="current" id="bcTitle">Service</span>
+      </nav>
+      <span class="eyebrow" id="svcEyebrow">Service</span>
+      <h1 id="svcTitle">Service</h1>
+      <p id="svcTagline"></p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap split wide-left">
+      <div class="reveal">
+        <span class="kicker">Overview</span>
+        <h3 id="svcOverviewHeading">What we deliver</h3>
+        <p class="body" id="svcSummary"></p>
+        <ul class="checklist two" id="svcCapabilities" style="margin-top:8px"></ul>
+      </div>
+      <div class="ph tall reveal"><span class="mono" id="svcPh">service visual</span></div>
+    </div>
+  </section>
+
+  <section class="band white">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">How we work</span>
+        <h2>Our delivery process</h2>
+      </div>
+      <div class="process" id="svcProcess"></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap split">
+      <div class="reveal">
+        <span class="kicker">Deliverables</span>
+        <h3>What you receive</h3>
+        <p class="body">Clear, documented outputs at every stage — built for review, audit and handover.</p>
+        <ul class="checklist" id="svcDeliverables"></ul>
+      </div>
+      <div class="reveal">
+        <span class="kicker">Industries served</span>
+        <h3>Where we apply it</h3>
+        <div class="cards" id="svcIndustries" style="grid-template-columns:1fr; gap:12px; margin-top:8px"></div>
+        <div class="card" style="margin-top:18px; background:var(--cg-mist); border:0; box-shadow:none; display:flex; gap:14px; align-items:flex-start; padding:22px">
+          <i data-lucide="quote" style="width:26px;height:26px;color:var(--cg-gate-blue);flex-shrink:0"></i>
+          <p style="font-size:16px;color:var(--cg-deep-navy);font-weight:600;line-height:1.55" id="svcProof"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band white">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Keep exploring</span>
+        <h2>Related services</h2>
+      </div>
+      <div class="cards" id="svcRelated"></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <h3 id="svcCtaTitle">Request a quote</h3>
+        <p>Tell us about your requirement and we'll respond with a documented quote within one business day.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-accent">Request a Quote <i data-lucide="chevron-right" style="width:20px;height:20px"></i></a>
+          <a href="contact.html" class="btn btn-ghost">Book a consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/data.js"></script>
+  <script>
+    (function () {
+      var params = new URLSearchParams(location.search);
+      var slug = params.get('s');
+      var svc = CG.services.find(function (s) { return s.slug === slug; }) || CG.services[0];
+
+      document.title = svc.title + ' — Corporategate Limited';
+      document.getElementById('bcTitle').textContent = svc.title;
+      document.getElementById('svcEyebrow').textContent = 'Service Division';
+      document.getElementById('svcTitle').textContent = svc.title;
+      document.getElementById('svcTagline').textContent = svc.tagline;
+      document.getElementById('svcSummary').textContent = svc.summary;
+      document.getElementById('svcPh').textContent = svc.title.toLowerCase() + ' photo';
+      document.getElementById('svcProof').textContent = svc.proof;
+      document.getElementById('svcCtaTitle').textContent = 'Need ' + svc.title.split(' & ')[0].toLowerCase() + ' support?';
+
+      document.getElementById('svcCapabilities').innerHTML = svc.capabilities.map(function (c) {
+        return '<li><i data-lucide="check-circle-2"></i>' + c + '</li>';
+      }).join('');
+      document.getElementById('svcDeliverables').innerHTML = svc.deliverables.map(function (d) {
+        return '<li><i data-lucide="file-check"></i>' + d + '</li>';
+      }).join('');
+      document.getElementById('svcIndustries').innerHTML = svc.industries.map(function (i) {
+        return '<div class="card" style="padding:16px 20px; display:flex; align-items:center; gap:12px">' +
+          '<i data-lucide="building-2" style="width:20px;height:20px;color:var(--cg-gate-blue)"></i>' +
+          '<span style="font-size:15.5px;font-weight:600;color:var(--cg-carbon-ink)">' + i + '</span></div>';
+      }).join('');
+      document.getElementById('svcProcess').innerHTML = CG.steps.map(function (s) {
+        return '<div class="step reveal"><div class="num">' + s.n + '</div><h4>' + s.t + '</h4><p>' + s.d + '</p></div>';
+      }).join('');
+
+      var related = CG.services.filter(function (s) { return s.slug !== svc.slug; }).slice(0, 3);
+      document.getElementById('svcRelated').innerHTML = related.map(function (s) {
+        return '<a class="card link-card service-card reveal" href="service.html?s=' + s.slug + '">' +
+          '<div class="icon-badge" style="background:' + s.color + '"><i data-lucide="' + s.icon + '"></i></div>' +
+          '<h4>' + s.title + '</h4><p>' + s.summary + '</p>' +
+          '<span class="learn" style="color:' + s.color + '">Explore service <i data-lucide="chevron-right"></i></span></a>';
+      }).join('');
+    })();
+  </script>
+  <script src="assets/site.js"></script>
+</body></html>

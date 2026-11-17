@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Corporategate Limited</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+Mono:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+</head>
+<body data-page="about">
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><i data-lucide="chevron-right"></i><span class="current">About</span>
+      </nav>
+      <span class="eyebrow">About Corporategate</span>
+      <h1>A Nigerian multi-service gateway, built on documentation and delivery</h1>
+      <p>Incorporated in 2007 as a private company limited by shares, with a broad operating scope spanning contracting, technology, logistics, training and project delivery.</p>
+    </div>
+  </section>
+
+  <!-- PROFILE -->
+  <section class="band" id="profile">
+    <div class="wrap split wide-left">
+      <div class="reveal">
+        <span class="kicker">Company Profile</span>
+        <h3>One partner across eight coordinated divisions</h3>
+        <p class="body">Corporategate Limited is a Nigerian private company limited by shares, incorporated in 2007. Our memorandum sets out a deliberately broad operating scope — general contracts, marketing, import/export, distribution, transport, manufacturing and industrial supply, ICT, telecommunications, security systems, training, management systems, construction and investments.</p>
+        <p class="body">In practice, that breadth lets us act as a single accountable partner: sourcing what you need, integrating the technology around it, moving the goods, and delivering the project — all with documentation built for audit and tender review.</p>
+        <a href="contact.html" class="btn btn-primary" style="margin-top:8px">Request Company Profile <i data-lucide="arrow-right"></i></a>
+      </div>
+      <div class="ph tall reveal"><span class="mono">company / team photo</span></div>
+    </div>
+  </section>
+
+  <!-- MISSION / VISION -->
+  <section class="band white">
+    <div class="wrap">
+      <div class="cards two">
+        <div class="card reveal">
+          <div class="icon-badge" style="background:var(--cg-gate-blue)"><i data-lucide="target"></i></div>
+          <h4>Our Mission</h4>
+          <p>To be the dependable gateway between Nigerian organisations and the goods, technology, infrastructure and capability they need — delivered reliably, documented fully and supported long-term.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icon-badge" style="background:var(--cg-deep-navy)"><i data-lucide="eye"></i></div>
+          <h4>Our Vision</h4>
+          <p>To be recognised as a leading multi-service company in Nigeria — the first call for procurement, technology, security, logistics and project delivery across the public and private sectors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">What we stand for</span>
+        <h2>Our Values</h2>
+        <p>Five principles that govern every engagement.</p>
+      </div>
+      <div class="cards" id="valuesGrid"></div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section class="band white" id="leadership">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Our people</span>
+        <h2>Leadership</h2>
+        <p>Strategic oversight and hands-on delivery, in line with our articles of association.</p>
+      </div>
+      <div class="cards two" id="leadershipGrid"></div>
+      <p class="center mono reveal" style="color:var(--cg-steel-gray); font-size:13px; margin-top:32px">Names and portraits available on request — placeholders shown.</p>
+    </div>
+  </section>
+
+  <!-- HISTORY -->
+  <section class="band" id="history">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Corporate history</span>
+        <h2>How we grew</h2>
+      </div>
+      <div class="timeline" id="historyTimeline"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="band white">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <h3>Work with a documented, reliable partner</h3>
+        <p>Tell us what you need delivered and we'll respond with a documented quote.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-accent">Request a Quote <i data-lucide="chevron-right" style="width:20px;height:20px"></i></a>
+          <a href="services.html" class="btn btn-ghost">See our services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/data.js"></script>
+  <script>
+    document.getElementById('valuesGrid').innerHTML = CG.values.map(function (v) {
+      return '<div class="card reveal"><div class="icon-badge" style="background:var(--cg-gate-cyan)"><i data-lucide="' + v.icon + '"></i></div>' +
+        '<h4>' + v.t + '</h4><p>' + v.d + '</p></div>';
+    }).join('');
+
+    document.getElementById('leadershipGrid').innerHTML = CG.leadership.map(function (l) {
+      return '<div class="card leader-card reveal" style="display:flex; gap:22px; align-items:flex-start">' +
+        '<div class="avatar" style="width:96px;height:96px;flex-shrink:0;margin:0"><i data-lucide="user-round"></i></div>' +
+        '<div><div class="nm">' + l.name + '</div><div class="rl">' + l.role + '</div><p class="bio">' + l.bio + '</p></div></div>';
+    }).join('');
+
+    document.getElementById('historyTimeline').innerHTML = CG.history.map(function (h) {
+      return '<div class="tl-item reveal"><div class="yr">' + h.yr + '</div><h4>' + h.t + '</h4><p>' + h.d + '</p></div>';
+    }).join('');
+  </script>
+  <script src="assets/site.js"></script>
+</body></html>

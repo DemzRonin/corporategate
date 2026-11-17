@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corporategate Limited — Procurement, Technology &amp; Project Delivery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+Mono:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+</head>
+<body data-page="home">
+  <div id="site-header"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="wrap">
+      <span class="hero-eyebrow"><i data-lucide="shield-check"></i> Nigerian multi-service company · Incorporated 2007</span>
+      <h2>Your Gateway to Procurement, Technology &amp; Project Delivery</h2>
+      <p class="lede">
+        A Nigerian multi-service company providing general contracting, procurement, ICT, telecommunications,
+        security systems, logistics, training and comprehensive project support since 2007.
+      </p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-accent">Request a Quote <i data-lucide="chevron-right" style="width:20px;height:20px"></i></a>
+        <a href="contact.html" class="btn btn-ghost">Request Company Profile</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="trust">
+    <div class="wrap trust-grid">
+      <div class="trust-item reveal"><i data-lucide="award"></i><div class="t">Incorporated 2007</div><div class="s">Nigeria-based</div></div>
+      <div class="trust-item reveal"><i data-lucide="users"></i><div class="t">Multi-Service</div><div class="s">8 Core Divisions</div></div>
+      <div class="trust-item reveal"><i data-lucide="check-circle-2"></i><div class="t">Fully Compliant</div><div class="s">Governed &amp; Registered</div></div>
+      <div class="trust-item reveal"><i data-lucide="clock"></i><div class="t">Rapid Response</div><div class="s">Responsive Support</div></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">What we do</span>
+        <h2>Our Services</h2>
+        <p>Comprehensive solutions across contracting, technology, logistics and project delivery.</p>
+      </div>
+      <div class="cards" id="homeServices"></div>
+      <div class="center" style="margin-top:44px">
+        <a href="services.html" class="btn btn-outline">View all services <i data-lucide="arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="band white">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">How we work</span>
+        <h2>A Proven Four-Step Process</h2>
+        <p>Disciplined delivery that ensures excellence at every stage.</p>
+      </div>
+      <div class="process" id="homeProcess"></div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES PREVIEW -->
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">Sectors we serve</span>
+        <h2>Industries We Serve</h2>
+        <p>Trusted delivery across the public sector, enterprise and infrastructure.</p>
+      </div>
+      <div class="cards" id="homeIndustries"></div>
+      <div class="center" style="margin-top:44px">
+        <a href="industries.html" class="btn btn-outline">Explore all industries <i data-lucide="arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPLIANCE -->
+  <section class="band mist">
+    <div class="wrap">
+      <div class="compliance reveal">
+        <i data-lucide="badge-check" class="seal"></i>
+        <h3>Fully Registered &amp; Compliant</h3>
+        <p>Nigerian private company limited by shares, incorporated in 2007. We deliver with complete documentation built for audit and tender review by clients, partners and procurement officers.</p>
+        <a href="contact.html" class="btn btn-primary">Talk to our team <i data-lucide="chevron-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="band white">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <h3>Ready to Get Started?</h3>
+        <p>Whether you need procurement support, ICT solutions, security systems or project delivery, our team is ready to assist with a fast, documented response.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-accent">Request a Quote <i data-lucide="chevron-right" style="width:20px;height:20px"></i></a>
+          <a href="contact.html#vendor" class="btn btn-ghost">Become a Vendor</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/data.js"></script>
+  <script>
+    document.getElementById('homeServices').innerHTML = CG.services.slice(0, 6).map(function (s) {
+      return '<a class="card link-card service-card reveal" href="service.html?s=' + s.slug + '">' +
+        '<div class="icon-badge" style="background:' + s.color + '"><i data-lucide="' + s.icon + '"></i></div>' +
+        '<h4>' + s.title + '</h4><p>' + s.summary + '</p>' +
+        '<span class="learn" style="color:' + s.color + '">Learn More <i data-lucide="chevron-right"></i></span></a>';
+    }).join('');
+
+    document.getElementById('homeProcess').innerHTML = CG.steps.map(function (s) {
+      return '<div class="step reveal"><div class="num">' + s.n + '</div><h4>' + s.t + '</h4><p>' + s.d + '</p></div>';
+    }).join('');
+
+    document.getElementById('homeIndustries').innerHTML = CG.industries.slice(0, 6).map(function (i) {
+      return '<a class="card ind-card link-card reveal" href="industries.html">' +
+        '<i data-lucide="' + i.icon + '" class="head"></i><h4>' + i.title + '</h4>' +
+        '<p>' + i.desc + '</p></a>';
+    }).join('');
+  </script>
+  <script src="assets/site.js"></script>
+</body></html>

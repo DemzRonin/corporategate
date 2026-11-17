@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Corporategate Limited</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+Mono:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+</head>
+<body data-page="terms">
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><i data-lucide="chevron-right"></i><span class="current">Terms of Service</span>
+      </nav>
+      <span class="eyebrow">Legal</span>
+      <h1>Terms of Service</h1>
+      <p>The terms that govern your use of this website and any enquiries you submit to Corporategate Limited.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap legal">
+      <aside class="legal-toc reveal">
+        <div class="lbl">On this page</div>
+        <ul>
+          <li><a href="#acceptance">Acceptance</a></li>
+          <li><a href="#use">Use of the site</a></li>
+          <li><a href="#enquiries">Enquiries &amp; quotes</a></li>
+          <li><a href="#ip">Intellectual property</a></li>
+          <li><a href="#content">Accuracy of content</a></li>
+          <li><a href="#liability">Liability</a></li>
+          <li><a href="#links">Third-party links</a></li>
+          <li><a href="#law">Governing law</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </aside>
+
+      <div class="prose reveal">
+        <div class="updated"><i data-lucide="calendar-clock"></i> Last updated: June 2026</div>
+
+        <h2 id="acceptance">Acceptance of these terms</h2>
+        <p>These Terms of Service ("Terms") govern your access to and use of the Corporategate Limited website. By using this website, you agree to these Terms. If you do not agree, please do not use the site.</p>
+
+        <h2 id="use">Use of the site</h2>
+        <p>You may use this website for lawful purposes only — to learn about our services, request a quote, submit a vendor enquiry, or contact us. You agree not to:</p>
+        <ul class="bullets">
+          <li>Use the site in any way that breaches applicable laws or regulations.</li>
+          <li>Attempt to gain unauthorised access to the site or any connected systems.</li>
+          <li>Introduce malicious code or otherwise interfere with the site's operation.</li>
+          <li>Submit false, misleading or fraudulent information through our forms.</li>
+        </ul>
+
+        <h2 id="enquiries">Enquiries, quotes and proposals</h2>
+        <p>Information submitted through our quote, vendor and general enquiry forms is used to respond to you and to prepare proposals. Any quote, estimate or proposal we provide is an invitation to discuss and is not a binding offer unless and until set out in a signed written agreement. Pricing, availability and timelines are indicative until confirmed in writing.</p>
+
+        <h2 id="ip">Intellectual property</h2>
+        <p>All content on this website — including text, layout, graphics, logos and the Corporategate name — is owned by or licensed to Corporategate Limited and is protected by applicable intellectual-property laws. You may view and print pages for your own reference, but you may not reproduce, distribute or commercially exploit any content without our prior written permission.</p>
+
+        <h2 id="content">Accuracy of content</h2>
+        <p>We aim to keep the information on this website accurate and current, but it is provided for general information only. Service descriptions, capabilities and examples are illustrative and may change. We make no warranty that the content is complete, accurate or up to date at all times.</p>
+
+        <h2 id="liability">Limitation of liability</h2>
+        <p>To the fullest extent permitted by law, Corporategate Limited will not be liable for any indirect, incidental or consequential loss arising from your use of, or inability to use, this website. Nothing in these Terms excludes any liability that cannot be excluded under applicable law.</p>
+
+        <h2 id="links">Third-party links</h2>
+        <p>This website may contain links to third-party websites or services. We provide these for convenience only and are not responsible for the content, policies or practices of any third party.</p>
+
+        <h2 id="law">Governing law</h2>
+        <p>These Terms are governed by the laws of the Federal Republic of Nigeria. Any dispute relating to this website or these Terms is subject to the exclusive jurisdiction of the Nigerian courts.</p>
+
+        <h2 id="contact">Contact us</h2>
+        <p>If you have questions about these Terms, please contact us at <a href="#" id="termsEmail">our email</a> or through our <a href="contact.html">contact page</a>.</p>
+
+        <div class="legal-note">
+          <i data-lucide="info"></i>
+          <p>This page is provided as general website content and is not legal advice. Corporategate Limited should have it reviewed and finalised by qualified counsel before publication.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/data.js"></script>
+  <script>
+    var te = document.getElementById('termsEmail');
+    te.textContent = CG.contact.email;
+    te.href = 'mailto:' + CG.contact.email + '?subject=Terms%20enquiry';
+  </script>
+  <script src="assets/site.js"></script>
+</body></html>

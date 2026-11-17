@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Corporategate Limited</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+Mono:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+</head>
+<body data-page="services">
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><i data-lucide="chevron-right"></i><span class="current">Services</span>
+      </nav>
+      <span class="eyebrow">Our Capabilities</span>
+      <h1>Eight coordinated divisions, one accountable partner</h1>
+      <p>From procurement and ICT to security, logistics, training and construction — delivered with documentation built for audit and tender review.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="cards" id="allServices"></div>
+    </div>
+  </section>
+
+  <section class="band white">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">How we work</span>
+        <h2>A Proven Four-Step Process</h2>
+        <p>Every engagement follows the same disciplined path.</p>
+      </div>
+      <div class="process" id="svcProcess"></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <h3>Not sure which service you need?</h3>
+        <p>Tell us about your requirement and we'll point you to the right division — or coordinate several at once.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-accent">Request a Quote <i data-lucide="chevron-right" style="width:20px;height:20px"></i></a>
+          <a href="contact.html" class="btn btn-ghost">Talk to our team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/data.js"></script>
+  <script>
+    document.getElementById('allServices').innerHTML = CG.services.map(function (s) {
+      return '<a class="card link-card service-card reveal" href="service.html?s=' + s.slug + '">' +
+        '<div class="icon-badge" style="background:' + s.color + '"><i data-lucide="' + s.icon + '"></i></div>' +
+        '<h4>' + s.title + '</h4><p>' + s.summary + '</p>' +
+        '<span class="learn" style="color:' + s.color + '">Explore service <i data-lucide="chevron-right"></i></span></a>';
+    }).join('');
+    document.getElementById('svcProcess').innerHTML = CG.steps.map(function (s) {
+      return '<div class="step reveal"><div class="num">' + s.n + '</div><h4>' + s.t + '</h4><p>' + s.d + '</p></div>';
+    }).join('');
+  </script>
+  <script src="assets/site.js"></script>
+</body></html>

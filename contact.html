@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Corporategate Limited</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+Mono:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+</head>
+<body data-page="contact">
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><i data-lucide="chevron-right"></i><span class="current">Contact</span>
+      </nav>
+      <span class="eyebrow">Get in touch</span>
+      <h1>Let's talk about what you need delivered</h1>
+      <p>Request a quote, enquire about partnering as a vendor, or send a general message. We respond with a documented reply, typically within one business day.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap contact-grid">
+      <!-- LEFT: info -->
+      <div class="contact-info reveal">
+        <span class="kicker">Contact details</span>
+        <h3>Reach our team</h3>
+        <p>Our team coordinates procurement, ICT, security, logistics, training and project delivery from Nigeria.</p>
+        <div class="contact-row"><span class="ico"><i data-lucide="phone"></i></span><span><span class="lbl">Phone</span><br><a class="val" id="cPhone" href="#">+234 (0) XXX XXXX XXX</a></span></div>
+        <div class="contact-row"><span class="ico"><i data-lucide="message-circle"></i></span><span><span class="lbl">WhatsApp</span><br><a class="val" id="cWhats" href="#">Chat with us</a></span></div>
+        <div class="contact-row"><span class="ico"><i data-lucide="mail"></i></span><span><span class="lbl">Email</span><br><a class="val" id="cEmail" href="#">info@corporategate.ng</a></span></div>
+        <div class="contact-row"><span class="ico"><i data-lucide="map-pin"></i></span><span><span class="lbl">Location</span><br><span class="val">Nigeria</span></span></div>
+        <div class="ph short reveal" style="margin-top:24px; min-height:200px"><span class="mono">map embed placeholder</span></div>
+      </div>
+
+      <!-- RIGHT: tabbed forms -->
+      <div class="reveal">
+        <div data-tabs="">
+          <div class="tabs" role="tablist">
+            <button class="tab active" data-tab="quote">Request a Quote</button>
+            <button class="tab" data-tab="vendor">Vendor Enquiry</button>
+            <button class="tab" data-tab="general">General</button>
+          </div>
+
+          <!-- QUOTE -->
+          <div class="tab-panel active" data-panel="quote">
+            <div class="form-card">
+              <form data-cgform="" novalidate="">
+                <div class="form-body">
+                  <h4>Request a Quote</h4>
+                  <p class="form-intro">Tell us about your requirement and we'll respond with a documented quote.</p>
+                  <div class="field-row">
+                    <div class="field" data-field=""><label for="q-name">Full Name</label><input id="q-name" type="text" placeholder="Your name" required=""><span class="err-msg">Please enter your name.</span></div>
+                    <div class="field" data-field=""><label for="q-org">Organisation</label><input id="q-org" type="text" placeholder="Company / agency"></div>
+                  </div>
+                  <div class="field" data-field=""><label for="q-email">Email Address</label><input id="q-email" type="email" placeholder="you@company.com" required=""><span class="err-msg">Please enter a valid email address.</span></div>
+                  <div class="field" data-field=""><label for="q-service">Service Required</label>
+                    <select id="q-service" required="">
+                      <option value="">Select a service</option>
+                    </select><span class="err-msg">Please select a service.</span>
+                  </div>
+                  <div class="field" data-field=""><label for="q-msg">Message</label><textarea id="q-msg" placeholder="Tell us about your requirements, scope and timeline..."></textarea></div>
+                  <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center">Submit Request</button>
+                  <p class="form-foot">Prefer email? Write to <a href="#" class="mailto-link" data-subject="Quote request">our team</a>.</p>
+                </div>
+                <div class="form-success">
+                  <i data-lucide="check-circle-2"></i>
+                  <h4>Request received</h4>
+                  <p>Thank you. Our team will respond with a documented quote within one business day.</p>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- VENDOR -->
+          <div class="tab-panel" data-panel="vendor" id="vendor">
+            <div class="form-card">
+              <form data-cgform="" novalidate="">
+                <div class="form-body">
+                  <h4>Vendor / Partner Enquiry</h4>
+                  <p class="form-intro">Interested in supplying or partnering with us? Tell us about your capabilities.</p>
+                  <div class="field-row">
+                    <div class="field" data-field=""><label for="v-company">Company Name</label><input id="v-company" type="text" placeholder="Your company" required=""><span class="err-msg">Please enter your company name.</span></div>
+                    <div class="field" data-field=""><label for="v-contact">Contact Person</label><input id="v-contact" type="text" placeholder="Full name" required=""><span class="err-msg">Please enter a contact name.</span></div>
+                  </div>
+                  <div class="field" data-field=""><label for="v-email">Email Address</label><input id="v-email" type="email" placeholder="you@company.com" required=""><span class="err-msg">Please enter a valid email address.</span></div>
+                  <div class="field" data-field=""><label for="v-cat">Supply Category</label>
+                    <select id="v-cat" required="">
+                      <option value="">Select a category</option>
+                      <option>Goods &amp; general supplies</option>
+                      <option>ICT &amp; telecom equipment</option>
+                      <option>Security systems</option>
+                      <option>Logistics &amp; transport</option>
+                      <option>Construction &amp; materials</option>
+                      <option>Professional services</option>
+                    </select><span class="err-msg">Please select a category.</span>
+                  </div>
+                  <div class="field" data-field=""><label for="v-caps">Capabilities</label><textarea id="v-caps" placeholder="Describe what you supply, your capacity and any certifications..."></textarea></div>
+                  <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center">Submit Enquiry</button>
+                  <p class="form-foot">Prefer email? Write to <a href="#" class="mailto-link" data-subject="Vendor enquiry">our team</a>.</p>
+                </div>
+                <div class="form-success">
+                  <i data-lucide="check-circle-2"></i>
+                  <h4>Enquiry received</h4>
+                  <p>Thank you. Our procurement team will review your capabilities and be in touch about next steps.</p>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- GENERAL -->
+          <div class="tab-panel" data-panel="general">
+            <div class="form-card">
+              <form data-cgform="" novalidate="">
+                <div class="form-body">
+                  <h4>General Enquiry</h4>
+                  <p class="form-intro">Have a question? Send us a message and we'll get back to you.</p>
+                  <div class="field" data-field=""><label for="m-name">Full Name</label><input id="m-name" type="text" placeholder="Your name" required=""><span class="err-msg">Please enter your name.</span></div>
+                  <div class="field" data-field=""><label for="m-email">Email Address</label><input id="m-email" type="email" placeholder="you@company.com" required=""><span class="err-msg">Please enter a valid email address.</span></div>
+                  <div class="field" data-field=""><label for="m-msg">Message</label><textarea id="m-msg" placeholder="How can we help?" required=""></textarea><span class="err-msg">Please enter a message.</span></div>
+                  <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center">Send Message</button>
+                  <p class="form-foot">Prefer email? Write to <a href="#" class="mailto-link" data-subject="General enquiry">our team</a>.</p>
+                </div>
+                <div class="form-success">
+                  <i data-lucide="check-circle-2"></i>
+                  <h4>Message sent</h4>
+                  <p>Thank you for reaching out. We'll respond as soon as we can, typically within one business day.</p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/data.js"></script>
+  <script>
+    // contact details
+    document.getElementById('cPhone').textContent = CG.contact.phone;
+    document.getElementById('cPhone').href = 'tel:' + CG.contact.phoneHref;
+    document.getElementById('cEmail').textContent = CG.contact.email;
+    document.getElementById('cEmail').href = 'mailto:' + CG.contact.email;
+    document.getElementById('cWhats').href = 'https://wa.me/' + CG.contact.whatsapp;
+
+    // populate service select
+    var sel = document.getElementById('q-service');
+    CG.services.forEach(function (s) {
+      var o = document.createElement('option'); o.textContent = s.title; sel.appendChild(o);
+    });
+    // preselect from ?s=
+    var slug = new URLSearchParams(location.search).get('s');
+    if (slug) { var m = CG.services.find(function (s) { return s.slug === slug; }); if (m) sel.value = m.title; }
+
+    // mailto links
+    document.querySelectorAll('.mailto-link').forEach(function (a) {
+      a.href = 'mailto:' + CG.contact.email + '?subject=' + encodeURIComponent(a.getAttribute('data-subject'));
+    });
+
+    // open correct tab from hash (#vendor) — done manually so it works before site.js binds
+    function activateTab(name) {
+      document.querySelectorAll('.tab').forEach(function (t) { t.classList.toggle('active', t.getAttribute('data-tab') === name); });
+      document.querySelectorAll('.tab-panel').forEach(function (p) { p.classList.toggle('active', p.getAttribute('data-panel') === name); });
+    }
+    if (location.hash === '#vendor') activateTab('vendor');
+  </script>
+  <script src="assets/site.js"></script>
+</body></html>
